@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
@@ -21,6 +22,11 @@ WebDriver driver;
         driver = new ChromeDriver();
     }
 
-
+    public void Find_X_click(String locator){
+        driver.findElement(By.xpath(locator)).click();
+    }
+    public void Find_X_SendKeys(String locator,String slovo){
+        driver.findElement(By.xpath(locator)).sendKeys(slovo);
+    }
 
 }
