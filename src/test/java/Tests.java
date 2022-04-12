@@ -16,11 +16,11 @@ public class Tests extends Home1 {
         driver.manage().window().maximize();
         driver.get("https://eatstreet.com/");
         driver.findElement(By.xpath("//div[@aria-pressed='false']")).click();
+        driver.quit();
     }
 
     @Test
     public void testIntertop() {
-        driver = new ChromeDriver();
         driver.get("https://intertop.ua/ua/");
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//div[@class='auth-ico']")).click();
@@ -48,6 +48,16 @@ public class Tests extends Home1 {
     public void Intertop(){
         driver.get("https://intertop.ua/ua/");
         driver.manage().window().maximize();
+        driver.quit();
+    }
 
+    @Test
+    public void Amazon(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://www.amazon.com/");
+        FindS_x_click("//input[@class='a-button-input']","0");
+        Find_X_click("//a[@data-csa-c-slot-id='nav_cs_4']");
+        Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(text(), 'Sell on Amazon')]")).isDisplayed());
+        driver.quit();
     }
 }
