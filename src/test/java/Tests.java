@@ -86,4 +86,14 @@ public class Tests extends Home1 {
         Assert.assertTrue(driver.getCurrentUrl().contains("/rates"));
         driver.quit();
     }
+
+    @Test
+    public void NikeTest(){
+        driver.get("https://www.nike.com/");
+        fullscreen();
+        Find_X_click("//p[contains(text(),'United States')]");
+        FindS_x_click("//span[contains(text(),'Join Us')]","0");
+        Assert.assertTrue(driver.getCurrentUrl().contains("membership"));
+        driver.quit();
+    }
 }
