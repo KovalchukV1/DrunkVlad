@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class Tests extends Home1 {
 
 
@@ -31,5 +33,14 @@ public class Tests extends Home1 {
         driver.quit();
     }
 
-
+    @Test
+    public void Rozetka(){
+        driver.get("https://rozetka.com.ua/");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Find_X_click("//span[@class='exponea-close-cross']");
+        FindS_x_click("//button[@class='header__button ng-star-inserted']", "1");
+//        Find_X_click();
+//        driver.quit();
+    }
 }
