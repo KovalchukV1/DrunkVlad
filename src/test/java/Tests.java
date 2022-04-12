@@ -39,8 +39,15 @@ public class Tests extends Home1 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Find_X_click("//span[@class='exponea-close-cross']");
-        FindS_x_click("//button[@class='header__button ng-star-inserted']", "1");
-//        Find_X_click();
-//        driver.quit();
+        FindS_x_click("//button[@class='header__button ng-star-inserted']", "0");
+        Assert.assertTrue(driver.findElement(By.xpath("//label[@for='remember_me']")).isDisplayed());
+        driver.quit();
+    }
+
+    @Test
+    public void Intertop(){
+        driver.get("https://intertop.ua/ua/");
+        driver.manage().window().maximize();
+
     }
 }
