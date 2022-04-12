@@ -48,5 +48,6 @@ public class Tests extends Home1 {
     public void Intertop(){
         driver.get("https://intertop.ua/ua/");
         driver.manage().window().maximize();
+
     }
 }
