@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Home1 {
-WebDriver driver;
+    WebDriver driver;
 
     public void sleep(int seconds) {
         try {
@@ -17,16 +17,21 @@ WebDriver driver;
     }
 
     @BeforeMethod
-    public void beforeMrthod(){
+    public void beforeMrthod() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 
-    public void Find_X_click(String locator){
+    public void Find_X_click(String locator) {
         driver.findElement(By.xpath(locator)).click();
     }
-    public void Find_X_SendKeys(String locator,String slovo){
+
+    public void Find_X_SendKeys(String locator, String slovo) {
         driver.findElement(By.xpath(locator)).sendKeys(slovo);
+    }
+
+    public void FindS_x_click(String locator, String get) {
+        driver.findElements(By.xpath(locator)).get(Integer.parseInt(get)).click();
     }
 
 }
