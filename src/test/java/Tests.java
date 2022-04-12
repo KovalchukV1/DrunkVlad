@@ -43,6 +43,10 @@ public class Tests extends Home1 {
         Assert.assertTrue(driver.findElement(By.xpath("//label[@for='remember_me']")).isDisplayed());
         driver.quit();
     }
-    
 
+    @Test
+    public void Intertop(){
+        driver.get("https://intertop.ua/ua/");
+        driver.manage().window().maximize();
+    }
 }
