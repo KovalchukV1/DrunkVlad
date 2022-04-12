@@ -77,4 +77,13 @@ public class Tests extends Home1 {
             Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(text(), 'Sell on Amazon')]")).isDisplayed());
             driver.quit();
         }
+
+    @Test
+    public void VodafonTest(){
+        driver.get("https://www.vodafone.ua/");
+        fullscreen();
+        Find_X_click("//a[contains(text(), 'Тарифи')]");
+        Assert.assertTrue(driver.getCurrentUrl().contains("/rates"));
+        driver.quit();
     }
+}
