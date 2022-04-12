@@ -34,4 +34,7 @@ public class Home1 {
         driver.findElements(By.xpath(locator)).get(Integer.parseInt(get)).click();
     }
 
+    public void fullscreen(){
+        driver.manage().window().maximize();
+    }
 }
