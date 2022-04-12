@@ -52,7 +52,7 @@ public class Tests extends Home1 {
     }
 
     @Test
-    public void Amazon(){
+    public void Amazon1(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.amazon.com/");
         FindS_x_click("//input[@class='a-button-input']","0");
@@ -60,4 +60,21 @@ public class Tests extends Home1 {
         Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(text(), 'Sell on Amazon')]")).isDisplayed());
         driver.quit();
     }
-}
+
+    @Test
+    public void Kievstar() {
+        driver.get("https://kyivstar.ua/uk/mm");
+        driver.manage().window().maximize();
+        FindS_x_click("//*[@class='link-text']", "3");
+        Assert.assertTrue(driver.findElement(By.xpath("//span[contains(text(), 'Вхід до особистого кабінету')]")).isDisplayed());
+    }
+        @Test
+        public void Amazon () {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.get("https://www.amazon.com/");
+            FindS_x_click("//input[@class='a-button-input']", "0");
+            Find_X_click("//a[@data-csa-c-slot-id='nav_cs_4']");
+            Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(text(), 'Sell on Amazon')]")).isDisplayed());
+            driver.quit();
+        }
+    }
